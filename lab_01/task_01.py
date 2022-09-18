@@ -8,11 +8,6 @@
 def task_01_func(year: int) -> str:
     """
 
-    :param year:
-    :return:
-    """
-    """
-
         функция проверки года на високосность
         :param year: - год для проверки
         :return: - result("YES" or "NO")
