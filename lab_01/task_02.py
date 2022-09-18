@@ -3,7 +3,7 @@
 
 
 # Первый способ
-def task_02_func_01(number: int) -> str:
+def task_02_func_01(number: int) -> int:
     """
     Функция подсчета числа знаков
     :param number:  целое число
