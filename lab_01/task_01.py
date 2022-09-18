@@ -11,7 +11,7 @@ def task_01_func(year: int) -> str:
         функция проверки года на високосность
         :param year: - год для проверки
         :return: - result("YES" or "NO")
-        """
+    """
 
     return "YES" if (year % 4 == 0) and (year % 100 != 0) or (year % 400 == 0) else "NO"
 
