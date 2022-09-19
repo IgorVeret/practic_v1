@@ -34,7 +34,6 @@ class Matrix:
 
     def __init__(self, rows=None, n=None, m=None, default=0):
         """
-
         Построение  матрицы
         :param rows: Однострочная матрица
         :param n: Число строк
@@ -124,6 +123,10 @@ class Matrix:
 
     @property
     def determinant(self):
+        """
+        Поиск определителя матрицы
+        :return: Определитель матрицы
+        """
         if self.n != self.m:
             raise ValueError('Необходима квадратная матрица.')
         else:
@@ -142,6 +145,11 @@ class Matrix:
                 return True
 
     def __add__(self, other):
+        """
+        Сложение
+        :param other: Обьект, другой обект
+        :return: Сумма
+        """
         if self.__error(other):
             sum_matrix = []
             for i in range(len(self.rows)):
@@ -150,6 +158,11 @@ class Matrix:
         return Matrix(sum_matrix)
 
     def __sub__(self, other):
+        """
+        Вычитание
+        :param other: Обьект, другой обект
+        :return: Разность
+        """
         if self.__error(other):
             sub_matrix = []
             for i in range(len(self.rows)):
@@ -158,6 +171,11 @@ class Matrix:
         return Matrix(sub_matrix)
 
     def __mul__(self, other):
+        """
+        Умножение
+        :param other: Обьект, другой обект
+        :return: Произведение
+        """
         if self.__error(other):
             mul_matrix = []
             for i in range(len(self.rows)):
@@ -166,6 +184,11 @@ class Matrix:
         return Matrix(mul_matrix)
 
     def __truediv__(self, other):
+        """
+        Деление
+        :param other: Обьект, другой обект
+        :return: Частное
+        """
         if self.__error(other):
             div_matrix = []
             for i in range(len(self.rows)):
@@ -193,6 +216,10 @@ class Matrix:
             return Matrix(res_row)
 
     def copy(self):
+        """
+        Копирование матрицы
+        :return: Копию матрицы
+        """
         copy = Matrix(self.rows)
         return copy
 
