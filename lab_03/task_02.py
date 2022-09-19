@@ -5,7 +5,13 @@
 import numpy as np
 
 
-def task_2(arr, n=3):
+def task_2(arr, n: int) -> list:
+    """
+    Повторение массива
+    :param arr: Массив
+    :param n: Кол-во повторений
+    :return: Возвращает массив повторенный указанное кол-во раз
+    """
     result = np.repeat(arr, n)  # Функция repeat() повторяет элементы массива
     return list(result)
 
