@@ -6,7 +6,7 @@
 
 def calls_counter(func):
     """
-    
+    Декоратор
     :param func: Принимает на вход функцию
     :return: None
     """
@@ -14,7 +14,7 @@ def calls_counter(func):
 
     def wrap(*args):
         """
-
+        Функция подсчитывает кол-во обращений
         :param args: Функция подсчитывает кол-во обращений
         :return:
         """

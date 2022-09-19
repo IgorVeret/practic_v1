@@ -25,8 +25,10 @@ class Vector:
 
     def __check(self, other):
         """
-            Метод выполняет проверку на длинну векторов.
-            Если она разная, пишется исключение.
+        Метод выполняет проверку на длинну векторов.
+        Если она разная, пишется исключение.
+        param other:
+        :return: True
         """
         if len(self.v) != len(other.v):  # Проверяем длинну списков
             raise ValueError("Векторы имеют разное количество\
@@ -35,9 +37,9 @@ class Vector:
 
     def __add__(self, other):
         """
-
-            Все операции, которые можно перегрузить
-            с помощью магических методов
+        Сложение
+        :param other: Обьект, другой обект
+        :return: Сумма
         """
         if self.__check(other):  # Проверяем длинну списков
             new_v = []  # Создаем новый вектор
@@ -47,6 +49,11 @@ class Vector:
         return new_v
 
     def __sub__(self, other):
+        """
+        Вычитание
+        :param other: Обьект, другой обект
+        :return: Разность
+        """
         if self.__check(other):
             new_v = []
             for i in enumerate(self.v):
@@ -55,6 +62,11 @@ class Vector:
         return new_v
 
     def __mul__(self, other):
+        """
+        Умножение
+        :param other: Обьект, другой обект
+        :return: Произведение
+        """
         if self.__check(other):
             new_v = 0
             for i in enumerate(self.v):
@@ -65,7 +77,9 @@ class Vector:
     @property
     def length(self):
         """
-            Метод вычисляет длинну вектора
+        Вычисление длинны вектора
+        :param other: Обьект
+        :return: Длинна вектора
         """
         l = 0
         for i in self.v:

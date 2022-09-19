@@ -15,11 +15,13 @@ class ComplexNumber:
         self.b = b  # Мнимая часть
 
     @staticmethod
-    def alg_polar(a: float, b: float) -> float:
+    def alg_polar(a: float, b: float):
         """
-
-            метод принимает комплексное число и преобразовывает
-            число из алгебраической формы в полярную.
+        метод принимает комплексное число и преобразовывает
+        число из алгебраической формы в полярную.
+        :param a: Действительная часть числа
+        :param b: Мнимая часть числа
+        :return: Полярная форма. Мнимого и дествительного числа
         """
         a = math.sqrt(a ** 2 + b ** 2)
         b = math.atan(b / a)
@@ -27,11 +29,13 @@ class ComplexNumber:
         return a, b
 
     @staticmethod
-    def polar_alg(a: float, b: float) -> float:
+    def polar_alg(a: float, b: float):
         """
-
-            метод принимает комплексное число и преобразовывает
-            из полярной в алгебраическую форму
+        метод принимает комплексное число и преобразовывает
+        число из алгебраической формы в полярную.
+        :param a: Действительная часть числа
+        :param b: Мнимая часть числа
+        :return: Алгебраическая форма. Мнимого и дествительного числа
         """
         a = a * math.cos(b)
         b = a * math.sin(b)
@@ -44,15 +48,35 @@ class ComplexNumber:
     """
 
     def __add__(self, other):
+        """
+        Сложение
+        :param other: Обьект, другой обект
+        :return: Сумма
+        """
         return complex(self.a + other.a, self.b + other.b)
 
     def __sub__(self, other):
+        """
+        Вычитание
+        :param other: Обьект, другой обект
+        :return: Разность
+        """
         return complex(self.a - other.a, self.b - other.b)
 
     def __mul__(self, other):
+        """
+        Умножение
+        :param other: Обьект, другой обект
+        :return: Произведение
+        """
         return complex(self.a * other.a - self.b * other.b, self.a * self.b + other.b * self.a)
 
     def __truediv__(self, other):
+        """
+        Деление
+        :param other: Обьект, другой обект
+        :return: Частное
+        """
         return complex(self.a / other.a, self.b / other.b)
 
 
