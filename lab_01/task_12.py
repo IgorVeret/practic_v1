@@ -10,12 +10,12 @@
 
 def task_12_func(input_path, output_path = None):
     """
-
-            функция принимает пути к файлу
-            читает строки из файла с четными индексами,
-            а не четные увеличивает на минимальное число,
-            содержащееся в этом файле
-            """
+    Функция читает строки из файла с четными индексами,
+    а не четные увеличивает на минимальное число, содержащееся в этом файле
+    :param input_path: Путь к файлу
+    :param output_path:Путь к выходному файлу
+    :return:
+    """
     l = []
     while True:  # считываем из файла
         line = input_path.readline()
@@ -28,6 +28,7 @@ def task_12_func(input_path, output_path = None):
         if i % 2 == 0:  # Проверяем на четность
             number_multiply = (w * min_number)  # Умножаем на мин значение
             number_multiply_round = round(number_multiply, 5)  # округляем
+            print(number_multiply_round)
             output_path.writelines(str(number_multiply_round) + '\n')  # записываем в файл
     return print('Информация записана')
 
