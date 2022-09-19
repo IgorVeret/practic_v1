@@ -11,11 +11,12 @@ import fnmatch
 
 def task_10_func(dir_path, prev_extension, next_extension):
     """
-
-        функция принимает путь к папке
-        и типы файлов. Возвращет количество
-        файлов и файлов с измененным раширением.
-        """
+    Возвращет количество файлов и файлов с измененным раширением.
+    :param dir_path: Путь к папке
+    :param prev_extension: Тип файлов
+    :param next_extension: Тип файлов
+    :return: Общее количество файлов и Количество измененных файлов
+    """
     total = 0
     changed = 0
     for fname in os.listdir(dir_path):
