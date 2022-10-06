@@ -27,16 +27,31 @@ jd = data.merge(label_names, on='label_id', how='left')
 
 reg = re.compile(r'[^a-zA-Z ]')  # Регулярное выражение(выбираем буквы)
 
+
 # Текст приводим к нижнему регистру, заменяем символы, сплитуем
-def preprocess(text):
+def preprocess(text:str)->list:
+    """
+    Текст приводим к нижнему регистру, заменяем символы, сплитуем
+    :param text: получает строку
+    :return: список
+    """
     word_processing = text.lower()
-    print(word_processing)
+
     word_processing = re.sub(reg, ' ', word_processing)
     return word_processing.split()
 
+
 def task_5():
+    """
+    Вызываем функцию preprocess
+    :return: возвращаем первые 10 столбцов
+    """
     jd['pp_text'] = jd['text'].apply(preprocess)
+    print(type(jd.head(10)))
     return jd.head(10)
+
+
 if __name__ == "__main__":
-    result=task_5()
-    # print(result)
+    result = task_5()
+    print(result)
+
